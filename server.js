@@ -8,7 +8,7 @@ const ITEM_NAME = "goal";
 const OWNER = "Jeremy Escoses";
 // ===================================================
 
-const items = [{ id: 1, text: "Sample " + ITEM_NAME }];
+const items = [{ id: 1, text: "Finish the lab on time" }];
 
 function sendJson(res, status, data) {
   res.writeHead(status, { "Content-Type": "application/json" });
@@ -28,6 +28,13 @@ const server = http.createServer((req, res) => {
       itemName: ITEM_NAME,
       owner: OWNER,
       message: process.env.APP_MESSAGE || "Hello from my own app!",
+    });
+  }
+
+  if (req.method === "GET" && url === "/api/about") {
+    return sendJson(res, 200, {
+      owner: OWNER,
+      purpose: "A tracker for my finals goals so I stay on schedule.",
     });
   }
 

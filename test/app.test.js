@@ -34,3 +34,10 @@ test("rejects an empty item", async () => {
   });
   assert.strictEqual(res.status, 400);
 });
+
+test("about endpoint names the owner", async () => {
+  const res = await fetch(base + "/api/about");
+  const data = await res.json();
+  assert.strictEqual(res.status, 200);
+  assert.ok(data.owner.length > 0);
+});
