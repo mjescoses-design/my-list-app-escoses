@@ -8,7 +8,7 @@ const ITEM_NAME = "goal";
 const OWNER = "Jeremy Escoses";
 // ===================================================
 
-const items = [{ id: 1, text: "Sample " + ITEM_NAME }];
+const items = [{ id: 1, text: "Finish the lab on time" }];
 
 function sendJson(res, status, data) {
   res.writeHead(status, { "Content-Type": "application/json" });
