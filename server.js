@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   const url = req.url.split("?")[0];
 
   if (req.method === "GET" && url === "/health") {
-    return sendJson(res, 200, { status: "down" });
+    return sendJson(res, 200, { status: "ok" });
   }
 
   if (req.method === "GET" && url === "/api/info") {
