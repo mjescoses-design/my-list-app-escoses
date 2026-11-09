@@ -31,6 +31,13 @@ const server = http.createServer((req, res) => {
     });
   }
 
+  if (req.method === "GET" && url === "/api/about") {
+    return sendJson(res, 200, {
+      owner: OWNER,
+      purpose: "A tracker for my finals goals so I stay on schedule.",
+    });
+  }
+
   if (url === "/api/items" && req.method === "GET") {
     return sendJson(res, 200, items);
   }
